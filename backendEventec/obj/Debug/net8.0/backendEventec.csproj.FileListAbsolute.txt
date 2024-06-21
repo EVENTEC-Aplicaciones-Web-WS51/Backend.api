@@ -1,0 +1,7 @@
+C:\Users\Jeremi\RiderProjects\backendEventec\backendEventec\obj\Debug\net8.0\backendEventec.csproj.AssemblyReference.cache
+C:\Users\Jeremi\RiderProjects\backendEventec\backendEventec\obj\Debug\net8.0\backendEventec.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jeremi\RiderProjects\backendEventec\backendEventec\obj\Debug\net8.0\backendEventec.AssemblyInfoInputs.cache
+C:\Users\Jeremi\RiderProjects\backendEventec\backendEventec\obj\Debug\net8.0\backendEventec.AssemblyInfo.cs
+C:\Users\Jeremi\RiderProjects\backendEventec\backendEventec\obj\Debug\net8.0\backendEventec.csproj.CoreCompileInputs.cache
+C:\Users\Jeremi\RiderProjects\backendEventec\backendEventec\obj\Debug\net8.0\backendEventec.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Jeremi\RiderProjects\backendEventec\backendEventec\obj\Debug\net8.0\backendEventec.MvcApplicationPartsAssemblyInfo.cache
