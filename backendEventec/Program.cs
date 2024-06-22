@@ -1,9 +1,14 @@
 
+using backendEventec.paymethods.Application.Internal.CommandServices;
+using backendEventec.paymethods.Application.Internal.QueriesServices;
+using backendEventec.paymethods.Domain.Repositories;
+using backendEventec.paymethods.Domain.Services;
+using backendEventec.paymethods.Infrastructure.Persistence.EFC.Repositories;
+using backendEventec.Shared.Domain.Repositories;
 using backendEventec.Shared.Infrastructure.Persistence.EFC.Configuration;
 using backendEventec.Shared.Infrastructure.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using pcWeb2.Shared.Domain.Repositories;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -63,8 +68,15 @@ builder.Services.AddSwaggerGen();
 // Configure Dependency Injection
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>(); // Add this line
 
-// PurchaseOrders Bounded Context Injection Configuration
+// Wallet Bounded Context Injection Configuration
+builder.Services.AddScoped<IWalletRepository, WalletRepository>();
+builder.Services.AddScoped<IWalletCommandService, WalletCommandService>();
+builder.Services.AddScoped<IWalletQueryService, WalletQueryService>();
 
+// Card Bounded Context Injection Configuration
+builder.Services.AddScoped<ICardRepository, CardRepository>();
+builder.Services.AddScoped<ICardCommandService, CardCommandService>();
+builder.Services.AddScoped<ICardQueryService, CardQueryService>();
 
 var app = builder.Build();
 

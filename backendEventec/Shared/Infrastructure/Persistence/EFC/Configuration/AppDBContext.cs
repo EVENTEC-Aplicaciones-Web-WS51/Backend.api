@@ -1,6 +1,6 @@
+using backendEventec.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 using EntityFrameworkCore.CreatedUpdatedDate.Extensions;
 using Microsoft.EntityFrameworkCore;
-using pcWeb2.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 
 namespace backendEventec.Shared.Infrastructure.Persistence.EFC.Configuration;
 

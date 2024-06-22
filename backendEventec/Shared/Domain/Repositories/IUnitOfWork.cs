@@ -1,4 +1,4 @@
-namespace pcWeb2.Shared.Domain.Repositories;
+namespace backendEventec.Shared.Domain.Repositories;
 
 public interface IUnitOfWork
 {

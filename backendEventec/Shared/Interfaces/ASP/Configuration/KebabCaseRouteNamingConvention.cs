@@ -1,7 +1,7 @@
+using backendEventec.Shared.Interfaces.ASP.Configuration.Extensions;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
-using pcWeb2.Shared.Interfaces.ASP.Configuration.Extensions;
 
-namespace pcWeb2.Shared.Interfaces.ASP.Configuration;
+namespace backendEventec.Shared.Interfaces.ASP.Configuration;
 
 public class KebabCaseRouteNamingConvention : IControllerModelConvention
 {
