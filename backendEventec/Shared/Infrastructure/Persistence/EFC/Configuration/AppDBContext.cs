@@ -88,7 +88,7 @@ namespace backendEventec.Shared.Infrastructure.Persistence.EFC.Configuration
             builder.Entity<Organizer>().ToTable("Organizer");
             builder.Entity<Organizer>().HasKey(o => o.Id);
             builder.Entity<Organizer>().Property(o => o.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Organizer>().Property(o => o.CompanyId).IsRequired();
+            builder.Entity<Organizer>().Property(o => o.CompanyName).IsRequired();
             builder.Entity<Organizer>().Property(o => o.UserId).IsRequired();
             builder.Entity<Organizer>().Property(o => o.EventsInCharge).IsRequired();
             

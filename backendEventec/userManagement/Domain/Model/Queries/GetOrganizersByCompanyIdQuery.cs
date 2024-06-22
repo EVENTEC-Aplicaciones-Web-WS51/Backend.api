@@ -1,3 +1,3 @@
 namespace backendEventec.UserManagement.Domain.Model.Queries;
 
-public record GetOrganizersByCompanyIdQuery(int CompanyId);
+public record GetOrganizersByCompanyNameQuery(string CompanyName);

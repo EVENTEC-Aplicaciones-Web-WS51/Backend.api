@@ -1,3 +1,3 @@
 namespace backendEventec.UserManagement.Domain.Model.Commands;
 
-public record CreateOrganizerCommand(int UserId);
+public record CreateOrganizerCommand(int UserId,int EventsInCharge,string CompanyName);

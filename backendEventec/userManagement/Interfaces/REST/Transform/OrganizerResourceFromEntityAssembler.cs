@@ -6,5 +6,5 @@ namespace backendEventec.UserManagement.Interfaces.REST.Transform;
 public class OrganizerResourceFromEntityAssembler
 {
     public static OrganizerResource ToResourceFromEntity(Organizer entity) =>
-        new OrganizerResource(entity.Id, entity.CompanyId, entity.UserId, entity.EventsInCharge);
+        new OrganizerResource(entity.Id, entity.CompanyName, entity.UserId, entity.EventsInCharge);
 }

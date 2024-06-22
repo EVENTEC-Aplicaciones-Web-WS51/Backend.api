@@ -6,6 +6,7 @@ public class Client
 {
     public int Id { get; private set; }
     public int UserId { get; private set; }
+    
 
     protected Client()
     {

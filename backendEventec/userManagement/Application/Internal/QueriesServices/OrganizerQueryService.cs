@@ -17,9 +17,9 @@ public class OrganizerQueryService(IOrganizerRepository organizerRepository): IO
         return await organizerRepository.FindByUserIdAsync(query.UserId);
     }
 
-    public async Task<IEnumerable<Organizer>> Handle(GetOrganizersByCompanyIdQuery query)
+    public async Task<IEnumerable<Organizer>> Handle(GetOrganizersByCompanyNameQuery query)
     {
-        return await organizerRepository.FindByCompanyIdAsync(query.CompanyId);
+        return await organizerRepository.FindByCompanyNameAsync(query.CompanyName);
     }
 
     public async Task<IEnumerable<Organizer>> Handle(GetAllOrganizersQuery query)

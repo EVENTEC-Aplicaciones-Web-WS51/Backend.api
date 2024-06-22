@@ -27,8 +27,8 @@ public class OrganizerRepository : BaseRepository<Organizer>, IOrganizerReposito
         return await Context.Set<Organizer>().Where(o => o.UserId == userId).ToListAsync();
     }
 
-    public async Task<IEnumerable<Organizer>> FindByCompanyIdAsync(int companyId)
+    public async Task<IEnumerable<Organizer>> FindByCompanyNameAsync(string companyName)
     {
-        return await Context.Set<Organizer>().Where(o => o.CompanyId == companyId).ToListAsync();
+        return await Context.Set<Organizer>().Where(o => o.CompanyName == companyName).ToListAsync();
     }
 }

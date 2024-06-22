@@ -1,3 +1,3 @@
 namespace backendEventec.UserManagement.Interfaces.REST.Resources;
 
-public record OrganizerResource(int Id,int CompanyId,int UserId, int EventsInCharge);
+public record OrganizerResource(int Id,string CompanyName,int UserId, int EventsInCharge);

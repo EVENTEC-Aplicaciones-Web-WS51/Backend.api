@@ -40,15 +40,7 @@ public class OrganizerController(IOrganizerCommandService organizerCommandServic
         var resources = organizers.Select(OrganizerResourceFromEntityAssembler.ToResourceFromEntity);
         return Ok(resources);
     }
-
-    [HttpGet("companies/{companyId}")]
-    public async Task<ActionResult> GetOrganizersByCompanyId(int companyId)
-    {
-        var getOrganizersByCompanyIdQuery = new GetOrganizersByCompanyIdQuery(companyId);
-        var organizers = await organizerQueryService.Handle(getOrganizersByCompanyIdQuery);
-        var resources = organizers.Select(OrganizerResourceFromEntityAssembler.ToResourceFromEntity);
-        return Ok(resources);
-    }
+    
 
     [HttpGet]
     public async Task<ActionResult> GetAllOrganizers()

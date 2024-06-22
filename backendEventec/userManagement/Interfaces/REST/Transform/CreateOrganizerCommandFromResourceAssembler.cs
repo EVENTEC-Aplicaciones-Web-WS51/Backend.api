@@ -6,5 +6,5 @@ namespace backendEventec.UserManagement.Interfaces.REST.Transform;
 public class CreateOrganizerCommandFromResourceAssembler
 {
     public static CreateOrganizerCommand ToCommandFromResource(CreateOrganizerResource resource) =>
-        new(resource.UserId);
+        new(resource.UserId,resource.EventsInCharge,resource.CompanyName);
 }
