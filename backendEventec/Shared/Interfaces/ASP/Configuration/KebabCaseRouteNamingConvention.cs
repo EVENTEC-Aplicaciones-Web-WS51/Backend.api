@@ -1,31 +1,32 @@
+using backendEventec.Shared.Interfaces.ASP.Configuration.Extensions;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
-using pcWeb2.Shared.Interfaces.ASP.Configuration.Extensions;
 
-namespace pcWeb2.Shared.Interfaces.ASP.Configuration;
-
-public class KebabCaseRouteNamingConvention : IControllerModelConvention
+namespace backendEventec.Shared.Interfaces.ASP.Configuration
 {
-    private static AttributeRouteModel? ReplaceControllerTemplate(SelectorModel selector, string name)
+    public class KebabCaseRouteNamingConvention : IControllerModelConvention
     {
-        return selector.AttributeRouteModel != null
-            ? new AttributeRouteModel
-            {
-                Template = selector.AttributeRouteModel.Template?
-                    .Replace("[controller]", name.ToKebabCase())
-            }
-            : null;
-    }
-
-    public void Apply(ControllerModel controller)
-    {
-        foreach (var selector in controller.Selectors)
+        private static AttributeRouteModel? ReplaceControllerTemplate(SelectorModel selector, string name)
         {
-            selector.AttributeRouteModel = ReplaceControllerTemplate(selector, controller.ControllerName);
+            return selector.AttributeRouteModel != null
+                ? new AttributeRouteModel
+                {
+                    Template = selector.AttributeRouteModel.Template?
+                        .Replace("[controller]", name.ToKebabCase())
+                }
+                : null;
         }
 
-        foreach (var selector in controller.Actions.SelectMany(a => a.Selectors))
+        public void Apply(ControllerModel controller)
         {
-            selector.AttributeRouteModel = ReplaceControllerTemplate(selector, controller.ControllerName);
+            foreach (var selector in controller.Selectors)
+            {
+                selector.AttributeRouteModel = ReplaceControllerTemplate(selector, controller.ControllerName);
+            }
+
+            foreach (var selector in controller.Actions.SelectMany(a => a.Selectors))
+            {
+                selector.AttributeRouteModel = ReplaceControllerTemplate(selector, controller.ControllerName);
+            }
         }
     }
 }
