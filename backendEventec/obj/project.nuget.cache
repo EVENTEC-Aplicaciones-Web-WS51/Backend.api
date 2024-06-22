@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "awQ0VpiwVDKSk0NJtF4UkwsefaYO7uW523DGNbZWrFGbjv3aY3SVfyf3C1jX36bMHVmzzZ/3V0AeYvOV0GDQHQ==",
+  "dgSpecHash": "4HmqHv5SiZtaCEIaVt309PsgQmTPUSgbZm934AlZyxpElmRoUsf/4httqw2hD+ey1+/e7TpmQX8K9T+akJDVMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jeremi\\RiderProjects\\backendEventec\\backendEventec\\backendEventec.csproj",
+  "projectFilePath": "C:\\Users\\Jeremi\\Documents\\GitHub\\Backend.api\\backendEventec\\backendEventec.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jeremi\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\Jeremi\\.nuget\\packages\\entityframeworkcore.createdupdateddate\\8.0.0\\entityframeworkcore.createdupdateddate.8.0.0.nupkg.sha512",

@@ -1,5 +1,5 @@
+using backendEventec.Shared.Domain.Repositories;
 using backendEventec.Shared.Infrastructure.Persistence.EFC.Configuration;
-using pcWeb2.Shared.Domain.Repositories;
 
 namespace backendEventec.Shared.Infrastructure.Persistence.EFC.Repositories;
 

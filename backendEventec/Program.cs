@@ -1,9 +1,15 @@
 
+using Backend_MyEventec.EventAndTicketing.Infraestructure.Persistence.EFC.Repositories;
+using backendEventec.EventAndTicketing.Application.Internal.CommandServices;
+using backendEventec.EventAndTicketing.Application.Internal.QueryServices;
+using backendEventec.EventAndTicketing.Domain.Repositories;
+using backendEventec.EventAndTicketing.Domain.Services;
+using backendEventec.EventAndTicketing.Infraestructure.Persistence.EFC.Repositories;
+using backendEventec.Shared.Domain.Repositories;
 using backendEventec.Shared.Infrastructure.Persistence.EFC.Configuration;
 using backendEventec.Shared.Infrastructure.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using pcWeb2.Shared.Domain.Repositories;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -63,7 +69,14 @@ builder.Services.AddSwaggerGen();
 // Configure Dependency Injection
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>(); // Add this line
 
-// PurchaseOrders Bounded Context Injection Configuration
+//Ticket Bounded Context Injection Configuration
+builder.Services.AddScoped<ITicketRepository, TicketRepository>();
+builder.Services.AddScoped<ITicketCommandService, TicketCommandService>();
+builder.Services.AddScoped<ITicketQueryService, TicketQueryService>();
+// Event Bounded Context Injection Configuration
+builder.Services.AddScoped<IEventRepository, EventRepository>();
+builder.Services.AddScoped<IEventCommandService, EventCommandService>();
+builder.Services.AddScoped<IEventQueryService, EventQueryService>();
 
 
 var app = builder.Build();
