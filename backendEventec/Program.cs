@@ -44,7 +44,7 @@ builder.Services.AddSwaggerGen(
             {
                 Title = "Eventec.io",
                 Version = "v1",
-                Description = "Eventec",
+                Description = "Eventecs",
                 TermsOfService = new Uri("https://Eventec.com/tos"),
                 Contact = new OpenApiContact
                 {
