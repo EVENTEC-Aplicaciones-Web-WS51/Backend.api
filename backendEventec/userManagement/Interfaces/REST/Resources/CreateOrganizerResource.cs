@@ -1,0 +1,3 @@
+namespace backendEventec.UserManagement.Interfaces.REST.Resources;
+
+public record CreateOrganizerResource(int UserId);

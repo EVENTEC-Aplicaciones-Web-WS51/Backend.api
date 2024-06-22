@@ -19,8 +19,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="EventManagement\" />
-      <Folder Include="PaymethodsManagement\" />
       <Folder Include="UserManagement\" />
     </ItemGroup>
 
