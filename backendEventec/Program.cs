@@ -1,9 +1,14 @@
 
+using backendEventec.CenterManagement.Application.Internal.CommandServices;
+using backendEventec.CenterManagement.Application.Internal.QueriesServices;
+using backendEventec.CenterManagement.Domain.Repositories;
+using backendEventec.CenterManagement.Domain.Services;
+using backendEventec.CenterManagement.Infrastructure.Persistence.EFC.Repositories;
+using backendEventec.Shared.Domain.Repositories;
 using backendEventec.Shared.Infrastructure.Persistence.EFC.Configuration;
 using backendEventec.Shared.Infrastructure.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using pcWeb2.Shared.Domain.Repositories;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -63,8 +68,18 @@ builder.Services.AddSwaggerGen();
 // Configure Dependency Injection
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>(); // Add this line
 
-// PurchaseOrders Bounded Context Injection Configuration
+// Place, Company, and Headquarters Bounded Context Injection Configuration
+builder.Services.AddScoped<IPlaceRepository, PlaceRepository>();
+builder.Services.AddScoped<IPlaceCommandService, PlaceCommandService>();
+builder.Services.AddScoped<IPlaceQueryService, PlaceQueryService>();
 
+builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
+builder.Services.AddScoped<ICompanyCommandService, CompanyCommandService>();
+builder.Services.AddScoped<ICompanyQueryService, CompanyQueryService>();
+
+builder.Services.AddScoped<IHeadquartersRepository, HeadquartersRepository>();
+builder.Services.AddScoped<IHeadquartersCommandService, HeadquartersCommandService>();
+builder.Services.AddScoped<IHeadquartersQueryService, HeadquartersQueryService>();
 
 var app = builder.Build();
 
