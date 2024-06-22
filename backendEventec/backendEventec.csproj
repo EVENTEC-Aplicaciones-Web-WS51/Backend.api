@@ -22,7 +22,6 @@
       <Folder Include="CenterManagement\" />
       <Folder Include="EventManagement\" />
       <Folder Include="PaymethodsManagement\" />
-      <Folder Include="UserManagement\" />
     </ItemGroup>
 
 </Project>

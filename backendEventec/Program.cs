@@ -1,6 +1,11 @@
 
 using backendEventec.Shared.Infrastructure.Persistence.EFC.Configuration;
 using backendEventec.Shared.Infrastructure.Persistence.EFC.Repositories;
+using backendEventec.UserManagement.Application.Internal.CommandServices;
+using backendEventec.UserManagement.Application.Internal.QueriesServices;
+using backendEventec.UserManagement.Domain.Repositories;
+using backendEventec.UserManagement.Domain.Services;
+using backendEventec.UserManagement.Infrastructure.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using pcWeb2.Shared.Domain.Repositories;
@@ -63,7 +68,20 @@ builder.Services.AddSwaggerGen();
 // Configure Dependency Injection
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>(); // Add this line
 
-// PurchaseOrders Bounded Context Injection Configuration
+// Client Bounded Context Injection Configuration
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<IClientCommandService, ClientCommandService>();
+builder.Services.AddScoped<IClientQueryService, ClientQueryService>();
+
+// Organizer Bounded Context Injection Configuration
+builder.Services.AddScoped<IOrganizerRepository, OrganizerRepository>();
+builder.Services.AddScoped<IOrganizerCommandService, OrganizerCommandService>();
+builder.Services.AddScoped<IOrganizerQueryService, OrganizerQueryService>();
+
+// User Bounded Context Injection Configuration
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserCommandService, UserCommandService>();
+builder.Services.AddScoped<IUserQueryService, UserQueryService>();
 
 
 var app = builder.Build();
