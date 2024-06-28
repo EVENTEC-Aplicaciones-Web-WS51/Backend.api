@@ -1,10 +1,10 @@
 using backendEventec.Shared.Infrastructure.Persistence.EFC.Configuration;
 using backendEventec.Shared.Infrastructure.Persistence.EFC.Repositories;
-using backendEventec.UserManagement.Domain.Model.Aggregates;
-using backendEventec.UserManagement.Domain.Repositories;
+using backendEventec.userManagement.Domain.Repositories;
+using BDEventecFinal.userManagement.Domain.Model.Aggregates;
 using Microsoft.EntityFrameworkCore;
 
-namespace backendEventec.UserManagement.Infrastructure.Persistence.EFC.Repositories;
+namespace backendEventec.userManagement.Infrastructure.Persistence.EFC.Repositories;
 
 public class UserRepository : BaseRepository<User>, IUserRepository
 {
@@ -20,9 +20,9 @@ public class UserRepository : BaseRepository<User>, IUserRepository
     {
         return await Context.Set<User>().FindAsync(id);
     }
-
-    public async Task<IEnumerable<User>> FindByWalletIdAsync(int idWallet)
+    public async Task<User?> FindByEmailAsync(string email)
     {
-        return await Context.Set<User>().Where(c => c.IdWallet == idWallet).ToListAsync();
+        return await Context.Set<User>().FirstOrDefaultAsync(u => u.Email == email);
     }
+    
 }

@@ -1,9 +1,9 @@
-using backendEventec.UserManagement.Domain.Model.Aggregates;
-using backendEventec.UserManagement.Domain.Model.Queries;
-using backendEventec.UserManagement.Domain.Repositories;
-using backendEventec.UserManagement.Domain.Services;
+using backendEventec.userManagement.Domain.Repositories;
+using BDEventecFinal.userManagement.Domain.Model.Aggregates;
+using BDEventecFinal.userManagement.Domain.Model.Queries;
+using BDEventecFinal.userManagement.Domain.Services;
 
-namespace backendEventec.UserManagement.Application.Internal.QueriesServices;
+namespace backendEventec.userManagement.Application.Internal.QueriesServices;
 
 public class UserQueryService(IUserRepository userRepository): IUserQueryService
 {
@@ -16,9 +16,8 @@ public class UserQueryService(IUserRepository userRepository): IUserQueryService
     {
         return await userRepository.FindByIdAsync(query.Id);
     }
-
-    public async Task<IEnumerable<User>> Handle(GetUserByWalletIdQuery query)
+    public async Task<User?> Handle(GetUserByEmailQuery query)
     {
-        return await userRepository.FindByWalletIdAsync(query.IdWallet);
+        return await userRepository.FindByEmailAsync(query.Email);
     }
 }

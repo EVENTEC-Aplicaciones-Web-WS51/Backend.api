@@ -1,11 +1,11 @@
-using backendEventec.UserManagement.Domain.Model.Aggregates;
-using backendEventec.UserManagement.Domain.Model.Queries;
+using BDEventecFinal.userManagement.Domain.Model.Aggregates;
+using BDEventecFinal.userManagement.Domain.Model.Queries;
 
-namespace backendEventec.UserManagement.Domain.Services;
+namespace BDEventecFinal.userManagement.Domain.Services;
 
 public interface IUserQueryService
 {
     Task<IEnumerable<User>> Handle(GetAllUserQuery query);
     Task<User?> Handle(GetUserByIdQuery query);
-    Task<IEnumerable<User>> Handle(GetUserByWalletIdQuery query);
+    Task<User?>Handle(GetUserByEmailQuery query);
 }

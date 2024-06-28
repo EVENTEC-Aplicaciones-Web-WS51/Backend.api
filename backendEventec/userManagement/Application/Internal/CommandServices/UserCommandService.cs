@@ -1,10 +1,10 @@
 using backendEventec.Shared.Domain.Repositories;
-using backendEventec.UserManagement.Domain.Model.Aggregates;
-using backendEventec.UserManagement.Domain.Model.Commands;
-using backendEventec.UserManagement.Domain.Repositories;
-using backendEventec.UserManagement.Domain.Services;
+using backendEventec.userManagement.Domain.Repositories;
+using BDEventecFinal.userManagement.Domain.Model.Aggregates;
+using BDEventecFinal.userManagement.Domain.Model.Commands;
+using BDEventecFinal.userManagement.Domain.Services;
 
-namespace backendEventec.UserManagement.Application.Internal.CommandServices;
+namespace backendEventec.userManagement.Application.Internal.CommandServices;
 
 public class UserCommandService(IUserRepository userRepository,IUnitOfWork unitOfWork): IUserCommandService
 {

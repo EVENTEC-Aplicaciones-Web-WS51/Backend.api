@@ -1,8 +1,9 @@
 using backendEventec.CenterManagement.Domain.Model.Aggregates;
-using backendEventec.EventAndTicketing.Domain.Model.Aggregates;
 using backendEventec.paymethods.Domain.Model.Aggregates;
 using backendEventec.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
-using backendEventec.UserManagement.Domain.Model.Aggregates;
+using BDEventecFinal.eventManagement.Domain.Model.Aggregates;
+using BDEventecFinal.IAM.Domain.Model.Aggregates;
+using BDEventecFinal.userManagement.Domain.Model.Aggregates;
 using EntityFrameworkCore.CreatedUpdatedDate.Extensions;
 using Microsoft.EntityFrameworkCore;
 
@@ -68,51 +69,31 @@ namespace backendEventec.Shared.Infrastructure.Persistence.EFC.Configuration
             builder.Entity<User>().ToTable("User");
             builder.Entity<User>().HasKey(u => u.Id);
             builder.Entity<User>().Property(u => u.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<User>().Property(u => u.IdWallet).IsRequired();
             builder.Entity<User>().Property(u => u.FirstName).IsRequired();
             builder.Entity<User>().Property(u => u.LastName).IsRequired();
             builder.Entity<User>().Property(u => u.Address).IsRequired();
             builder.Entity<User>().Property(u => u.Email).IsRequired();
             builder.Entity<User>().Property(u => u.Phone).IsRequired();
             builder.Entity<User>().Property(u => u.Password).IsRequired();
-            builder.Entity<User>().Property(u => u.CreationDate).IsRequired();
-            builder.Entity<User>().Property(u => u.SuspensionDate).IsRequired(false);
-
-            // Client Context
-            builder.Entity<Client>().ToTable("Client");
-            builder.Entity<Client>().HasKey(c => c.Id);
-            builder.Entity<Client>().Property(c => c.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Client>().Property(c => c.UserId).IsRequired();
-
-            // Organizer Context
-            builder.Entity<Organizer>().ToTable("Organizer");
-            builder.Entity<Organizer>().HasKey(o => o.Id);
-            builder.Entity<Organizer>().Property(o => o.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Organizer>().Property(o => o.CompanyName).IsRequired();
-            builder.Entity<Organizer>().Property(o => o.UserId).IsRequired();
-            builder.Entity<Organizer>().Property(o => o.EventsInCharge).IsRequired();
+            builder.Entity<User>().Property(u => u.Role).IsRequired();
+            
             
             // Event Context
             builder.Entity<Event>().ToTable("Event");
-            builder.Entity<Event>().HasKey(e => e.Id);
-            builder.Entity<Event>().Property(e => e.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Event>().Property(e => e.IdHeadquarters).IsRequired();
-            builder.Entity<Event>().Property(e => e.IdOrganizer).IsRequired();
-            builder.Entity<Event>().Property(e => e.Name).IsRequired();
-            builder.Entity<Event>().Property(e => e.StartDate).IsRequired();
-            builder.Entity<Event>().Property(e => e.FinishDate).IsRequired();
+            builder.Entity<Event>().HasKey(e => e.IdEvent);
+            builder.Entity<Event>().Property(e => e.IdEvent).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Event>().Property(e => e.NameEvent).IsRequired();
             builder.Entity<Event>().Property(e => e.Description).IsRequired();
             builder.Entity<Event>().Property(e => e.TotalTicket).IsRequired();
             builder.Entity<Event>().Property(e => e.Status).IsRequired();
-        
-            // Ticket Configuration
-            builder.Entity<Ticket>().ToTable("Tickets");
-            builder.Entity<Ticket>().HasKey(t => t.Id);
-            builder.Entity<Ticket>().Property(t => t.Id).IsRequired().ValueGeneratedOnAdd();
-            builder.Entity<Ticket>().Property(t => t.EventId).IsRequired();
-            builder.Entity<Ticket>().Property(t => t.ClientId).IsRequired();
-            builder.Entity<Ticket>().Property(t => t.Price).IsRequired();
-            builder.Entity<Ticket>().Property(t => t.Category).IsRequired();
+            builder.Entity<Event>().Property(e => e.Type).IsRequired();
+            
+            // IAM Context
+            builder.Entity<UserIAM>().HasKey(u => u.IdIam);
+            builder.Entity<UserIAM>().Property(u => u.IdIam).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<UserIAM>().Property(u => u.Username).IsRequired();
+            builder.Entity<UserIAM>().Property(u => u.PasswordHash).IsRequired();
+            // Apply SnakeCase Naming Convention
             builder.UseSnakeCaseWithPluralizedTableNamingConvention();
         }
     }

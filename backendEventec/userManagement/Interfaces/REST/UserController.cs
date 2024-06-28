@@ -1,11 +1,11 @@
 using System.Net.Mime;
-using backendEventec.UserManagement.Domain.Model.Queries;
-using backendEventec.UserManagement.Domain.Services;
-using backendEventec.UserManagement.Interfaces.REST.Resources;
-using backendEventec.UserManagement.Interfaces.REST.Transform;
+using backendEventec.userManagement.Interfaces.REST.Resources;
+using BDEventecFinal.userManagement.Domain.Model.Queries;
+using BDEventecFinal.userManagement.Domain.Services;
+using BDEventecFinal.userManagement.Interfaces.REST.Transform;
 using Microsoft.AspNetCore.Mvc;
 
-namespace backendEventec.UserManagement.Interfaces.REST;
+namespace backendEventec.userManagement.Interfaces.REST;
 
 [ApiController]
 [Route("/[controller]")]
@@ -31,14 +31,6 @@ public class UserController(IUserCommandService userCommandService, IUserQuerySe
         var resource = UserResourceFromEntityAssembler.ToResourceFromEntity(result);
         return Ok(resource);
     }
-    [HttpGet("wallets/{walletId}")]
-    public async Task<ActionResult> GetUserByWalletId(int walletId)
-    {
-        var getUserByWalletIdQuery = new GetUserByWalletIdQuery(walletId);
-        var user = await userQueryService.Handle(getUserByWalletIdQuery);
-        var resources = user.Select(UserResourceFromEntityAssembler.ToResourceFromEntity);
-        return Ok(resources);
-    }
     [HttpGet]
     public async Task<ActionResult> GetAllUser()
     {
@@ -47,6 +39,14 @@ public class UserController(IUserCommandService userCommandService, IUserQuerySe
         var resources = user.Select(UserResourceFromEntityAssembler.ToResourceFromEntity);
         return Ok(resources);
     }
-    
+    [HttpGet("Email/{email}")]
+    public async Task<ActionResult> GetUserByEmail(string email)
+    {
+        var getUserByEmailQuery = new GetUserByEmailQuery(email);
+        var result = await userQueryService.Handle(getUserByEmailQuery);
+        if (result is null) return NotFound();
+        var resource = UserResourceFromEntityAssembler.ToResourceFromEntity(result);
+        return Ok(resource);
+    }
     
 }

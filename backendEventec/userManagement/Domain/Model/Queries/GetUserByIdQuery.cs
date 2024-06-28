@@ -1,3 +1,3 @@
-namespace backendEventec.UserManagement.Domain.Model.Queries;
+namespace BDEventecFinal.userManagement.Domain.Model.Queries;
 
 public record GetUserByIdQuery(int Id);

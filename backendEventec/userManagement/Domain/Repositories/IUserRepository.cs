@@ -1,11 +1,12 @@
 using backendEventec.Shared.Domain.Repositories;
-using backendEventec.UserManagement.Domain.Model.Aggregates;
+using BDEventecFinal.userManagement.Domain.Model.Aggregates;
 
-namespace backendEventec.UserManagement.Domain.Repositories;
+namespace backendEventec.userManagement.Domain.Repositories;
 
 public interface IUserRepository : IBaseRepository<User>
 {
     Task<IEnumerable<User>> FindAllAsync();
     Task<User?> FindByIdAsync(int id);
-    Task<IEnumerable<User>> FindByWalletIdAsync(int idWallet);
+    Task<User?> FindByEmailAsync(string email);
+    
 }

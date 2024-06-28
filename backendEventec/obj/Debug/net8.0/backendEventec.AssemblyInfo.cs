@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("backendEventec")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad0c22a84e373c0c55d977c2ea7066e44fa44ace")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee73ab675162530e800f663f9e16ab68462c9733")]
 [assembly: System.Reflection.AssemblyProductAttribute("backendEventec")]
 [assembly: System.Reflection.AssemblyTitleAttribute("backendEventec")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

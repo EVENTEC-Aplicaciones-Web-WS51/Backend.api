@@ -1,10 +1,10 @@
-using backendEventec.UserManagement.Domain.Model.Commands;
-using backendEventec.UserManagement.Interfaces.REST.Resources;
+using backendEventec.userManagement.Interfaces.REST.Resources;
+using BDEventecFinal.userManagement.Domain.Model.Commands;
 
-namespace backendEventec.UserManagement.Interfaces.REST.Transform;
+namespace BDEventecFinal.userManagement.Interfaces.REST.Transform;
 
 public static class CreateUserCommandFromResourceAssembler
 {
     public static CreateUserCommand ToCommandFromResource(CreateUserResource resource) =>
-        new(resource.FirstName, resource.LastName, resource.Address, resource.Email, resource.Phone, resource.Password);
+        new(resource.FirstName, resource.LastName,resource.Address, resource.Email, resource.Phone, resource.Password,resource.Role);
 }

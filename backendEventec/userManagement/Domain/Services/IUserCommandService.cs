@@ -1,7 +1,8 @@
-using backendEventec.UserManagement.Domain.Model.Aggregates;
-using backendEventec.UserManagement.Domain.Model.Commands;
+using BDEventecFinal.userManagement.Domain.Model.Aggregates;
+using BDEventecFinal.userManagement.Domain.Model.Commands;
 
-namespace backendEventec.UserManagement.Domain.Services;
+
+namespace BDEventecFinal.userManagement.Domain.Services;
 
 public interface IUserCommandService
 {
