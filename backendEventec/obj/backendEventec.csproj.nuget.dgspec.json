@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jeremi\\RiderProjects\\backendEventec\\backendEventec\\backendEventec.csproj": {}
+    "C:\\Users\\Jeremi\\Documents\\GitHub\\Backend.apis\\backendEventec\\backendEventec.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jeremi\\RiderProjects\\backendEventec\\backendEventec\\backendEventec.csproj": {
+    "C:\\Users\\Jeremi\\Documents\\GitHub\\Backend.apis\\backendEventec\\backendEventec.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jeremi\\RiderProjects\\backendEventec\\backendEventec\\backendEventec.csproj",
+        "projectUniqueName": "C:\\Users\\Jeremi\\Documents\\GitHub\\Backend.apis\\backendEventec\\backendEventec.csproj",
         "projectName": "backendEventec",
-        "projectPath": "C:\\Users\\Jeremi\\RiderProjects\\backendEventec\\backendEventec\\backendEventec.csproj",
+        "projectPath": "C:\\Users\\Jeremi\\Documents\\GitHub\\Backend.apis\\backendEventec\\backendEventec.csproj",
         "packagesPath": "C:\\Users\\Jeremi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jeremi\\RiderProjects\\backendEventec\\backendEventec\\obj\\",
+        "outputPath": "C:\\Users\\Jeremi\\Documents\\GitHub\\Backend.apis\\backendEventec\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jeremi\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "EntityFrameworkCore.CreatedUpdatedDate": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -45,6 +49,10 @@
             "Humanizer": {
               "target": "Package",
               "version": "[2.14.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
@@ -62,6 +70,14 @@
               "target": "Package",
               "version": "[1.1.6, )"
             },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[7.6.2, )"
+            },
             "MySql.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.2, )"
@@ -73,6 +89,10 @@
             "Swashbuckle.AspNetCore.Annotations": {
               "target": "Package",
               "version": "[6.6.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.6.2, )"
             }
           },
           "imports": [
